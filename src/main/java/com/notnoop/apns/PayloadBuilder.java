@@ -65,8 +65,10 @@ public final class PayloadBuilder {
      * @return  this
      */
     public PayloadBuilder alertBody(final String alert) {
-        customAlert.put("body", alert);
-        return this;
+        if (alert != null && !alert.trim().isEmpty()) {
+           customAlert.put("body", alert);
+           return this;
+        }
     }
 
     /**
